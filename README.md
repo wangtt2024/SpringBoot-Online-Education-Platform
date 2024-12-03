@@ -11,8 +11,18 @@ To set up the database configuration, go to `src/main/resources/application.prop
 
 Frontend:
 Follow the instructions in this url:https://docs.npmjs.com/downloading-and-installing-node-js-and-npm to install node.js and npm.  
-To run the frontend, run this command in your terminal: npm run dev  
+To run the frontend, go to the folder where the frontend files are, then  run this command in your terminal: 
+```bash
+npm run dev  
+```
 Packaging the frontend: npm run build
+
+## Demo
+#### The Login Page
+![Login Page](../assets/login_page.png)
+
+#### The Student Page
+![Student Page](../assets/student_page.png)
 
 ## Note
 The project is still in development and may contain many bugs.  
