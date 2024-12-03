@@ -19,10 +19,10 @@ Packaging the frontend: npm run build
 
 ## Demo
 #### The Login Page
-![Login Page](../assets/login_page.png)
+![Login Page](CourseAccessFront/src/assets/login_page.png)
 
 #### The Student Page
-![Student Page](../assets/student_page.png)
+![Student Page](CourseAccessFront/src/assets/student_page.png)
 
 ## Note
 The project is still in development and may contain many bugs.  
