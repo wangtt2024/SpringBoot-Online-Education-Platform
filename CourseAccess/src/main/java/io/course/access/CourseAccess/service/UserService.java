@@ -14,7 +14,11 @@ public interface UserService
 
     Boolean deleteLecturerByUsername(String username);
 
+    Boolean deleteLecturerById(Integer id);
+
     Boolean deleteStudentByUsername(String username);
+
+    Boolean deleteStudentById(Integer id);
 
     UserLecturerEntity updateLecturer(UserLecturerEntity lecturer);
 

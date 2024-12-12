@@ -52,9 +52,33 @@ public class UserServiceImpl implements UserService
     }
 
     @Override
+    public Boolean deleteLecturerById(Integer id)
+    {
+        Optional<UserLecturerEntity> lecturer = userLecturerRepository.findById(id);
+        if (lecturer.isPresent())
+        {
+            userLecturerRepository.delete(lecturer.get());
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public Boolean deleteStudentByUsername(String username)
     {
         Optional<UserStudentEntity> student = userStudentRepository.findByUsername(username);
+        if (student.isPresent())
+        {
+            userStudentRepository.delete(student.get());
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public Boolean deleteStudentById(Integer id)
+    {
+        Optional<UserStudentEntity> student = userStudentRepository.findById(id);
         if (student.isPresent())
         {
             userStudentRepository.delete(student.get());

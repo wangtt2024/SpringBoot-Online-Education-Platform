@@ -14,6 +14,8 @@ import java.util.Optional;
 
 public interface CourseRepository extends JpaRepository <CourseEntity, String> {
 
+    Optional<CourseEntity> findCourseById(String courseId);
+
     Optional<CourseEntity> findCoursesEntityByName(String courseName);
 
     @Query("SELECT c FROM CourseEntity c JOIN c.lecturer l WHERE l.id = :lecturerId")

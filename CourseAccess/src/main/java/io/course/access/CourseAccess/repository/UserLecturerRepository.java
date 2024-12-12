@@ -12,8 +12,12 @@ import java.util.Optional;
 public interface UserLecturerRepository extends JpaRepository<UserLecturerEntity, Integer> {
     Optional<UserLecturerEntity> findByUsername(String username);
 
+    Optional<UserLecturerEntity> findById(Integer id);
+
     @Query("select id from UserLecturerEntity where username = :username")
     Integer findIdByUsername(String username);
+
+
 
     @Modifying
     @Query("update UserLecturerEntity set enable = :enable where username = :username")

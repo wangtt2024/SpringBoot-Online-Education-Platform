@@ -35,7 +35,7 @@ public class UserController
     }
 
     //checked
-    @DeleteMapping("delete/lecturer/{username}")//api/user/delete/lecturer/{username}
+    @DeleteMapping("delete/lecturer-by-username/{username}")//api/user/delete/lecturer/{username}
     public ResponseEntity<?> deleteLecturer(@PathVariable String username)
     {
         Boolean deleted = userService.deleteLecturerByUsername(username);
@@ -43,11 +43,30 @@ public class UserController
         return ResponseEntity.ok(deleted);
     }
 
+    @DeleteMapping("delete/lecturer-by-id/{id}")//api/user/delete/lecturer/{id}
+    public ResponseEntity<?> deleteLecturerById(@PathVariable Integer id)
+    {
+        Boolean deleted = userService.deleteLecturerById(id);
+
+        return ResponseEntity.ok(deleted);
+    }
+
     //checked
-    @DeleteMapping("delete/student/{username}")//api/user/delete/student/{username}
+    @DeleteMapping("delete/student-by_username/{username}")//api/user/delete/student/{username}
     public ResponseEntity<?> deleteStudent(@PathVariable String username)
     {
         Boolean deleted = userService.deleteStudentByUsername(username);
+        if (deleted){
+            return ResponseEntity.ok("User deleted");
+        } else{
+            return ResponseEntity.ok("User not found");
+        }
+    }
+
+    @DeleteMapping("delete/student-by-id/{id}")//api/user/delete/student/{id}
+    public ResponseEntity<?> deleteStudentById(@PathVariable Integer id)
+    {
+        Boolean deleted = userService.deleteStudentById(id);
         if (deleted){
             return ResponseEntity.ok("User deleted");
         } else{
@@ -65,6 +84,10 @@ public class UserController
             return ResponseEntity.badRequest().body("username already exists");
         }
     }
+
+
+
+
 
     //checked
     @PutMapping("update/student")//api/user/update/student

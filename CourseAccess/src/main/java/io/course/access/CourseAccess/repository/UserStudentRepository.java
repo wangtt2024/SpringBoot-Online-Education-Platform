@@ -11,6 +11,8 @@ import java.util.Optional;
 public interface UserStudentRepository extends JpaRepository<UserStudentEntity, Integer> {
     Optional<UserStudentEntity> findByUsername(String username);
 
+    Optional<UserStudentEntity> findById(Integer id);
+
     @Query("select id from UserStudentEntity where username = :username")
     Integer findIdByUsername(String username);
 

@@ -27,6 +27,7 @@
       <input v-model="newuser.password" placeholder="Password" required>
     </div>
     <button type="submit">Register</button>
+    <button type="button" @click="handleDelete">Delete</button>
   </form>
 </template>
 
@@ -43,5 +44,11 @@ const newuser = ref({
   password: null
 });
 
-const emit = defineEmits(['submit']);
+const emit = defineEmits(['submit', 'delete']);
+
+
+const handleDelete = () => {
+  emit('delete', {id:newuser.value.id, role: newuser.value.role});
+}
+
 </script>
